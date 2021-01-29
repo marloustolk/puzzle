@@ -2,11 +2,10 @@
   display: grid;
   grid-template-columns: repeat(9, auto);
   background-color: darkred;
-  padding: 5%;
+  padding: 1vh;
 }
 .place {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20%;
+  border: 1px solid rgb(0, 0, 0);
+  padding: 4vh;
   text-align: center;
 }

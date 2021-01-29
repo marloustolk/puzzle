@@ -1,20 +1,6 @@
 <div class="board">
-  <div class="place"></div>
-  <div class="place"></div>
-  <div class="place"></div>  
-  <div class="place"></div>
-  <div class="place"></div>
-  <div class="place"></div>  
-  <div class="place"></div>
-  <div class="place"></div>
-  <div class="place"></div>  
-  <div class="place"></div>
-  <div class="place"></div>
-  <div class="place"></div>  
-  <div class="place"></div>
-  <div class="place"></div>
-  <div class="place"></div>  
-  <div class="place"></div>
-  <div class="place"></div>
-  <div class="place"></div>  
+  <div *ngFor="let place of places | keyvalue" class="place"
+  [style.background-color]="getColor(place.value)"
+  (mouseover)="select(place.key)"
+  (mouseleave)="deselect()"></div>
 </div>
