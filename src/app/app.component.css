@@ -1,0 +1,12 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(9, auto);
+  background-color: darkred;
+  padding: 5%;
+}
+.place {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20%;
+  text-align: center;
+}
