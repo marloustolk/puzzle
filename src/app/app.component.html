@@ -1,6 +1,6 @@
 <div class="board">
   <div *ngFor="let place of places" class="place"
-  [style.background-color]="getColor(place)"
+  [style.background]="getBackground(place)"
   (mouseover)="select(place)"
   (mouseleave)="deselect()"
   (click)="occupy(place)"></div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShapeCreator } from '../../shapecreator';
 import { Coordinate } from '../coordinate';
 import { Place } from '../place';
 import { Shape } from '../shape';
@@ -10,7 +11,7 @@ import { Shape } from '../shape';
 })
 export class AppComponent implements OnInit {
 places: Place[];
-shape: Shape = new Shape([ [0,0],[0,1],[1,1],[1,2],[2,0],[2,1] ]);
+shape: Shape = new ShapeCreator().shapes[0];
 public static boardSquareCount: number = 9;
 
   ngOnInit() {
@@ -20,9 +21,9 @@ public static boardSquareCount: number = 9;
     }
   }
 
-  getColor(place: Place): string {
+  getBackground(place: Place): string {
     if (place.occupied){
-      return place.selected ? "rgb(212, 0, 0)" : "rgba(61,104,66)";
+      return place.selected ? "rgb(212, 0, 0)" : place.shape.background;
     } else {
       return place.selected ? "rgb(122, 209, 133)" : "rgba(255, 255, 255, 0.8)";
     }
@@ -50,7 +51,7 @@ public static boardSquareCount: number = 9;
   occupy(place: Place){
     let shapePlaces = this.getShapePlaces(place);
     if (!shapePlaces.some(place => place.occupied)){
-      shapePlaces.forEach(place => place.setOccupied(true));
+      shapePlaces.forEach(place => place.setShape(this.shape));
     }
   }
 }

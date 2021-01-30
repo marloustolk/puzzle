@@ -1,11 +1,13 @@
 import { AppComponent } from "./app/app.component";
 import { Coordinate } from './coordinate';
+import { Shape } from "./shape";
 
 export class Place {
   key: number;
   coordinate: Coordinate;
   selected: boolean;
   occupied: boolean;
+  shape: Shape;
 
   constructor(key: number) {
     let x = key % AppComponent.boardSquareCount;
@@ -16,8 +18,14 @@ export class Place {
     this.occupied = false;
   }
 
-  setOccupied(occupied: boolean){
-    this.occupied = occupied;
+  setShape(shape: Shape){
+    this.shape = shape;
+    this.occupied = true;
+  }
+
+  removeShape(){
+    this.shape = null;
+    this.occupied = false;
   }
 
   setSelected(selected: boolean){
