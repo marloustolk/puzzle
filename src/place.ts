@@ -1,18 +1,15 @@
-import { AppComponent } from "./app/app.component";
 import { Coordinate } from './coordinate';
 import { Shape } from "./shape";
 
 export class Place {
-  key: number;
   coordinate: Coordinate;
   selected: boolean;
   occupied: boolean;
   shape: Shape;
 
-  constructor(key: number) {
-    let x = key % AppComponent.boardSquareCount;
-    let y = Math.floor(key / AppComponent.boardSquareCount);
-    this.key = key;
+  constructor(key: number, squareCount: number) {
+    let x = key % squareCount;
+    let y = Math.floor(key / squareCount);
     this.coordinate = new Coordinate(x,y);
     this.selected = false;
     this.occupied = false;
