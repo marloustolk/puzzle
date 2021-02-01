@@ -1,4 +1,4 @@
-import { Shape } from "./src/shape";
+import { Shape } from "./shape";
 
 export class ShapeCreator {
   backgrounds: string[] = new Array();
@@ -38,7 +38,7 @@ export class ShapeCreator {
       "#5b3072",
       "repeating-linear-gradient(135deg,#67056d,#67056d 10px,white 10px,white 20px)",
       "repeating-linear-gradient(135deg,#104d92,#104d92 10px,white 10px,white 20px)",
-      "#ce1045",
+      "#490677",
       "#1c4040",
       "repeating-linear-gradient(135deg,#490677,#490677 10px,white 10px,white 20px)",
       "#400040",
@@ -47,9 +47,7 @@ export class ShapeCreator {
       "#67056d",
       "#104d92",
       "repeating-linear-gradient(135deg,#ce1045,#ce1045 10px,white 10px,white 20px)",
-      "repeating-linear-gradient(135deg,#1c4040,#1c4040 10px,white 10px,white 20px)",
-      "#1aa196",
-      "#490677"];
+      "repeating-linear-gradient(135deg,#1c4040,#1c4040 10px,white 10px,white 20px)"];
   }
 
   listShapes(){
@@ -69,8 +67,6 @@ export class ShapeCreator {
     this.shapes.push(new Shape([ [0,1],[1,1],[2,1],[2,0],[3,0] ], this.backgrounds[13]));
     this.shapes.push(new Shape([ [1,0],[2,0],[0,1],[1,1],[2,1],[3,1] ], this.backgrounds[14]));
     this.shapes.push(new Shape([ [0,0],[0,1],[1,1] ], this.backgrounds[15]));
-    // this.shapes.push(new Shape([ [1,0],[0,1],[1,1],[2,1] ], this.backgrounds[16]));
-    //  this.shapes.push(new Shape([ [0,0],[1,0],[0,1],[1,1],[2,1],[2,2] ], this.backgrounds[17]));
   }
 
   shuffleShapes() {

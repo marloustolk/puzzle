@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { ShapeCreator } from "../../shapecreator";
-import { Coordinate } from "../coordinate";
-import { Place } from "../place";
-import { Shape } from "../shape";
+import { ShapeCreator } from "./shapecreator";
+import { Coordinate } from "./coordinate";
+import { Place } from "./place";
+import { Shape } from "./shape";
 
 @Component({
   selector: "my-app",
@@ -59,9 +59,9 @@ export class AppComponent implements OnInit {
 
   getBackground(place: Place): string {
     if (place.occupied) {
-      return place.selected ? "#000000" : place.shape.background;
+      return place.selected ? "#ce1045" : place.shape.background;
     } else {
-      return place.selected ? "#75C6C0" : "rgba(255, 255, 255, 0.7)";
+      return place.selected ? "#75C6C0" : "#000000";
     }
   }
 
