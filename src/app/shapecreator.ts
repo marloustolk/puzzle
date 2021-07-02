@@ -3,7 +3,7 @@ import { Shape } from "./shape";
 export class ShapeCreator {
   backgrounds: string[] = new Array();
   shapes: Shape[] = new Array();
-  counter: number = 0;
+  index: number = -1;
 
   constructor(){
     this.listBackGrounds();
@@ -12,21 +12,29 @@ export class ShapeCreator {
   }
 
   next(): Shape {
+    console.log(this.shapes)
     if (this.shapes.length > 0){
-      this.count();
-      let shape = this.shapes[this.counter];
+      this.nextIndex();
+      let shape = this.shapes[this.index];
       return shape;
     }
     return null;
   }
 
-  count(){
-    this.counter = (this.counter == (this.shapes.length - 1)) ? 0 : this.counter + 1;
+  nextIndex(){
+    if (this.shapes.length === 0){
+      this.index = -1;
+    } else if (this.index === (this.shapes.length -1)) {
+      this.index = 0; 
+    } else {
+      this.index++;
+    }
+    console.log("index=" +this.index);
   }
 
   remove() {
-    if (this.shapes.length > 0){
-      delete this.shapes[this.counter];
+    if (this.index > -1) {
+      this.shapes.splice(this.index, 1);
     }
   }
 
