@@ -1,3 +1,3 @@
-# angular-ivy-d9zmud
+# puzzle
 
 [Edit on StackBlitz ⚡️](https://stackblitz.com/edit/my-puzzle)
