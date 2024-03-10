@@ -1,0 +1,15 @@
+<game-menu [name]=name (event)="checkEvent($event)"></game-menu>
+<div class="background">
+  <div class="board">
+    <div *ngFor="let place of places" class="place" [style.background]="getBackground(place)"
+      (mouseover)="select(place)" (mouseleave)="deselect()" (click)="occupy(place)"></div>
+  </div>
+  <div class="menu">
+    <div class="button" (click)="newShape()">Next Piece</div>
+    <div class="button" (click)="turnShape()">Turn Piece</div>
+    <div class="button" (click)="flipShape()">Flip Piece</div>
+  </div>
+  <div class="shape">
+    <div *ngFor="let place of shapeBoard" class="place" [style.background]="getBackground(place)"></div>
+  </div>
+</div>
